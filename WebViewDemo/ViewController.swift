@@ -9,14 +9,25 @@
 import UIKit
 import WebKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, WKNavigationDelegate {
     
     // MARK: - Class Variable
     var webView: WKWebView?
     
+    // MARK: - Add webView to app main view
+    override func loadView() {
+        webView = WKWebView()
+        view = webView!
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let url = URL(string:"https://en.wikipedia.org/wiki/Main_Page")
+        let request = URLRequest(url: url!)
+        webView!.load(request)
+        
     }
 
     override func didReceiveMemoryWarning() {
