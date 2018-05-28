@@ -78,7 +78,7 @@ class ViewController: UIViewController, UITextFieldDelegate,  WKNavigationDelega
         let refresh = UIBarButtonItem(barButtonSystemItem: .refresh, target: webView, action: #selector(webView?.reload))
         toolbarItems = [refresh]
         
-        navigationController?.isToolbarHidden = true
+        navigationController?.isToolbarHidden = false
         
         textField.resignFirstResponder()
         
